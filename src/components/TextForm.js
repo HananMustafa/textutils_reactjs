@@ -9,18 +9,21 @@ export default function TextForm(props) {
     const regex = new RegExp(targetWord, "g");
     const updatedText = text.replace(regex, replaceWith);
     setText(updatedText);
+    props.showAlert("Text has been Replaced ", "success");
   };
 
   const handleUpClick = () => {
     console.log("Uppercase was clicked");
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Text hase been converted to Upper Case", "success");
   };
 
   const handleLowClick = () => {
     console.log("Lowercase was clicked");
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Text has been coverted to Lower Case", "success");
   };
 
   const handleOnChange = (event) => {
